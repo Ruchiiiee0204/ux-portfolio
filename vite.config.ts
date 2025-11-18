@@ -7,7 +7,7 @@ import path from "path";
 // - If repo is "username.github.io", use base: '/'
 // - If repo is a project page, use base: '/repo-name/'
 export default defineConfig({
-  base: process.env.VITE_BASE_PATH || '/',
+  base: '/ux-portfolio/',
   server: {
     host: "::",
     port: 8080,
