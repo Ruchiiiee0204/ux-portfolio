@@ -62,71 +62,73 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => {
-              const { elementRef, isVisible } = useScrollReveal();
-              return (
-                <div
-                  key={index}
-                  ref={elementRef}
-                  className={`scroll-reveal ${isVisible ? 'revealed' : ''}`}
-                  style={{ transitionDelay: `${index * 0.15}s` }}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <section aria-roledescription="carousel">
+                <ul
+                  className="flex gap-6 px-2 py-4 overflow-x-auto scroll-smooth"
+                  style={{
+                    padding: 0,
+                    margin: 0,
+                    listStyle: 'none',
+                    scrollSnapType: 'x mandatory',
+                    WebkitOverflowScrolling: 'touch'
+                  }}
                 >
-                  <a href={project.link || "#"} target={project.link ? "_blank" : undefined} rel={project.link ? "noopener noreferrer" : undefined}>
-                    <Card className="group cursor-pointer border-border hover:border-primary transition-all duration-500 overflow-hidden h-full hover-lift hover:shadow-2xl hover:shadow-primary/20">
-                      <CardContent className="p-0">
-                        <div className="h-48 bg-gradient-to-br relative overflow-hidden">
-                          {project.iframe ? (
-                            <iframe 
-                              src={project.iframe}
-                              className="absolute inset-0 w-full h-full"
-                              loading="lazy"
-                              allowFullScreen
-                              frameBorder="0"
-                              allow="clipboard-write"
-                              referrerPolicy="strict-origin-when-cross-origin"
-                            />
-                          ) : project.image ? (
-                            <img 
-                              src={project.image} 
-                              alt={project.title}
-                              className="absolute inset-0 w-full h-full object-cover"
-                            />
-                          ) : (
-                            <div className={`absolute inset-0 bg-gradient-to-br ${project.color} animate-gradient`}></div>
-                          )}
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 border-glow">
-                            <ArrowUpRight className="text-white" size={20} />
-                          </div>
-                        </div>
-                        
-                        <div className="p-6 space-y-4">
-                          <div>
-                            <div className="text-sm text-primary font-medium mb-2 group-hover:translate-x-1 transition-transform duration-300">{project.category}</div>
-                            <h3 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                          </div>
-                          
-                          <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-                          
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag, tagIndex) => (
-                              <span 
-                                key={tagIndex}
-                                className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </a>
-                </div>
-              );
-            })}
+                  {projects.map((project, index) => {
+                    const { elementRef, isVisible } = useScrollReveal();
+                    return (
+                      <li
+                        key={index}
+                        ref={elementRef}
+                        className={`scroll-reveal ${isVisible ? 'revealed' : ''}`}
+                        aria-label={`${index + 1} of ${projects.length}`}
+                        style={{
+                          scrollSnapAlign: 'center',
+                          flexShrink: 0,
+                          width: 'calc((100% - 72px) / 4)'
+                        }}
+                      >
+                        <a href={project.link || '#'} target={project.link ? '_blank' : undefined} rel={project.link ? 'noopener noreferrer' : undefined}>
+                          <Card className="group cursor-pointer border-border hover:border-primary transition-all duration-500 overflow-hidden h-full">
+                            <CardContent className="p-0">
+                              <div className="h-48 bg-gradient-to-br relative overflow-hidden">
+                                {project.iframe ? (
+                                  <iframe
+                                    src={project.iframe}
+                                    className="absolute inset-0 w-full h-full"
+                                    loading="lazy"
+                                    allowFullScreen
+                                    frameBorder="0"
+                                    allow="clipboard-write"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                  />
+                                ) : project.image ? (
+                                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
+                                ) : (
+                                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} animate-gradient`}></div>
+                                )}
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                              </div>
+
+                              <div className="p-4 space-y-3">
+                                <div>
+                                  <div className="text-sm text-primary font-medium mb-1">{project.category}</div>
+                                  <h3 className="text-lg font-bold truncate">{project.title}</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm truncate">{project.description}</p>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            </div>
+          
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { ArrowDown, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 import { useEffect, useState } from "react";
 
@@ -123,9 +123,21 @@ const Hero = () => {
             that bridge user needs with beautiful, functional design
           </p>
 
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-bounce pt-8 opacity-0 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
-            <ArrowDown size={20} className="animate-pulse" />
-            <span>Scroll to explore</span>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-8">
+            {[
+              { number: "3", label: "Years Experience" },
+              { number: "15+", label: "Projects Completed" },
+              { number: "∞", label: "Cups of Coffee" },
+            ].map((stat, index) => (
+              <div 
+                key={index} 
+                className="text-center space-y-2 hover:scale-110 transition-all duration-300 cursor-default group"
+                style={{ transitionDelay: `${index * 0.1}s` }}
+              >
+                <div className="text-3xl md:text-4xl font-bold text-gradient group-hover:glow-text transition-all duration-300">{stat.number}</div>
+                <div className="text-sm text-muted-foreground group-hover:text-primary transition-colors duration-300">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

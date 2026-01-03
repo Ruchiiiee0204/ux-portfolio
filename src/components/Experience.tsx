@@ -10,24 +10,14 @@ const Experience = () => {
       company: "Labra.io",
       type: "Full-time",
       period: "November 2024 - Present",
-      description: [
-        "Led UX for SmartGTM, an AI-driven GTM intelligence platform, designing adaptive visualizations to simplify signal analysis and accelerate decision-making.",
-        "Built and scaled Figma component libraries and design tokens, conducted interface audits, documented components, and collaborated with engineers for seamless design-to-dev handoff.",
-        "Designed Omni Dashboard for unified analytics, Buyer Details View for contextual insights, and Salesforce integrations to streamline GTM workflows.",
-        "Created Multi-Currency Dashboard, Multiple Party Offers, Reseller Authentication UI, and branded email templates for consistent, global user experiences."
-      ]
+      
     },
     {
       title: "UX/UI Designer",
       company: "Instrive softlabs",
       type: "Full-time",
       period: "June 2023 - November 2024",
-      description: [
-        "Designed wireframes, prototypes, and AI workflows for JustPing, boosting task completion by 30% and information retrieval by 25%.",
-        "Redesigned UX for Temasek Legal App, increasing engagement by 25% and reducing bounce by 18%.",
-        "Simplified complex tasks and built analytics dashboards for FTC (Banking), improving retention and decision-making.",
-        "Supported onboarding and refined key screens for Proxtera Marketplace, enhancing buyer–seller communication."
-      ]
+      
     }
   ];
 
@@ -66,17 +56,7 @@ const Experience = () => {
                     {exp.period}
                   </p>
                 </div>
-                <div className="text-foreground/90 leading-relaxed pt-4">
-                  {Array.isArray(exp.description) ? (
-                    <ul className="space-y-2 list-disc list-inside">
-                      {exp.description.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p>{exp.description}</p>
-                  )}
-                </div>
+                
               </div>
             ))}
           </div>

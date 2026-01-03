@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="marquee-content">
             {marqueeSkills.map((skill, index) => (
               <div key={`top-${index}`} className="inline-flex items-center gap-6">
-                <span className="marquee-text funky-text">
+                <span className="marquee-text funky-text text-xs">
                   {skill}
                 </span>
                 {index < marqueeSkills.length - 1 && (
@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="marquee-content">
             {marqueeSkills.slice().reverse().map((skill, index) => (
               <div key={`bottom-${index}`} className="inline-flex items-center gap-6">
-                <span className="marquee-text funky-text">
+                <span className="marquee-text funky-text text-xs">
                   {skill}
                 </span>
                 {index < marqueeSkills.length - 1 && (

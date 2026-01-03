@@ -19,35 +19,7 @@ const About = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent transition-all duration-700 ease-out border-glow" style={{ width: titleVisible ? '80px' : '0px' }}></div>
           </div>
 
-          <div className="space-y-6 text-lg leading-relaxed">
-            <p 
-              ref={content1Ref}
-              className={`text-foreground/90 scroll-reveal ${content1Visible ? 'revealed' : ''}`}
-              style={{ transitionDelay: '0.1s' }}
-            >
-              My passion lies at the intersection of design and human behavior, dedicated to 
-              architecting experiences that are both powerful and inherently intuitive.
-            </p>
-            
-            <p 
-              ref={content2Ref}
-              className={`text-foreground/90 scroll-reveal ${content2Visible ? 'revealed' : ''}`}
-              style={{ transitionDelay: '0.2s' }}
-            >
-              I specialize in transforming complex user problems into elegant, accessible 
-              solutions. My approach combines thorough user research, iterative prototyping, 
-              and data-driven design decisions to create products that users love.
-            </p>
-
-            <p 
-              ref={content3Ref}
-              className={`text-foreground/90 scroll-reveal ${content3Visible ? 'revealed' : ''}`}
-              style={{ transitionDelay: '0.3s' }}
-            >
-              My core focus is on robust information architecture and designing products 
-              that prioritize usability, accessibility, and delight in every interaction.
-            </p>
-          </div>
+          
 
           <div 
             ref={statsRef}
