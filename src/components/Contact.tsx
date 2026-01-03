@@ -17,8 +17,7 @@ const Contact = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gradient">Let's Work Together</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto transition-all duration-700 ease-out" style={{ width: titleVisible ? '80px' : '0px' }}></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm always open to discussing new projects, creative ideas, or opportunities 
-              to be part of your vision.
+              Open to new projects and creative ideas. Feel free to reach out for collaborations or consultation.
             </p>
           </div>
 
@@ -28,33 +27,31 @@ const Contact = () => {
             className={`flex flex-col items-center justify-center scroll-reveal ${contentVisible ? 'revealed' : ''}`}
           >
             <div className="space-y-8 text-center max-w-2xl">
-              <h3 className="text-2xl font-bold text-foreground">
-                Looking to start a project or you need consultation? Feel free to contact me.
-              </h3>
+              
               
               <div className="space-y-4">
-                <div className="flex flex-col items-center gap-4">
-                  <a 
-                    href="mailto:chruchi0204@gmail.com" 
+                <div className="flex flex-row flex-wrap items-center gap-6 justify-center">
+                  <a
+                    href="mailto:chruchi0204@gmail.com"
                     className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                   >
                     <Mail size={20} />
                     <span className="font-medium">chruchi0204@gmail.com</span>
                   </a>
-                  
-                  <a 
-                    href="https://www.linkedin.com/in/ruchi-r-/" 
-                    target="_blank" 
+
+                  <a
+                    href="https://www.linkedin.com/in/ruchi-r-/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
                   >
                     <Linkedin size={20} />
                     <span className="font-medium">LinkedIn</span>
                   </a>
-                  
-                  <a 
-                    href="https://zaap.bio/ruchich" 
-                    target="_blank" 
+
+                  <a
+                    href="https://zaap.bio/ruchich"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
                   >

@@ -29,9 +29,11 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button size="sm" className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90">
-              Resume
-            </Button>
+            <a href="https://drive.google.com/file/d/16kGbl1vFMuQQZQtOlLFgG3Pp5Xcs5kBS/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90">
+                Resume
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,9 +59,11 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button size="sm" className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90">
-              Resume
-            </Button>
+            <a href="https://drive.google.com/file/d/16kGbl1vFMuQQZQtOlLFgG3Pp5Xcs5kBS/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90">
+                Resume
+              </Button>
+            </a>
           </div>
         )}
       </div>
